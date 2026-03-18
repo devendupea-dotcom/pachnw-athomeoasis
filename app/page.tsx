@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Armchair, ArrowRight, Hammer, MapPin, Sprout, type LucideIcon } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { ContactForm } from "@/src/components/ContactForm";
 import { HeroImageCarousel } from "@/src/components/HeroImageCarousel";
 import { HomePortfolioGallery } from "@/src/components/HomePortfolioGallery";
@@ -13,25 +13,6 @@ const heroPoints = [
   "Owner-led design and build",
   "10+ years experience",
   "Tacoma • Gig Harbor • Puyallup",
-] as const;
-
-const trustItems = [
-  {
-    title: "Owner-Led Projects",
-    detail: "Peter handles the project from consultation through build.",
-  },
-  {
-    title: "10+ Years Experience",
-    detail: "Professional wall, hardscape, and landscape construction experience in the field.",
-  },
-  {
-    title: "Built for PNW Conditions",
-    detail: "Planned around slope, drainage, soil, and long-term durability.",
-  },
-  {
-    title: "South Sound Service Area",
-    detail: "Serving Tacoma, Gig Harbor, Puyallup, Lakewood, University Place, Olympia, and nearby communities.",
-  },
 ] as const;
 
 const heroSlides = [
@@ -76,36 +57,6 @@ const homeServices = [
     highlights: ["Edible gardens", "Native planting", "Whole-site planning"] as const,
   },
 ] as const;
-
-type ProjectTier = {
-  title: string;
-  description: string;
-  items: readonly string[];
-  icon: LucideIcon;
-  featured?: boolean;
-};
-
-const projectTiers: readonly ProjectTier[] = [
-  {
-    title: "Foundation Projects",
-    description: "Simple, clean upgrades to refresh and improve your yard without a large investment.",
-    items: ["Garden beds", "Planting", "Mulch / rock installs", "Basic yard cleanup"] as const,
-    icon: Sprout,
-  },
-  {
-    title: "Structural Solutions",
-    description: "Fix grading, drainage, and structural issues while improving usability.",
-    items: ["Retaining walls", "Drainage systems", "Land leveling", "Functional yard improvements"] as const,
-    icon: Hammer,
-  },
-  {
-    title: "Outdoor Living Spaces",
-    description: "Full transformations designed for comfort, entertainment, and long-term value.",
-    items: ["Paver patios", "Fire pits", "Outdoor living areas", "Complete backyard builds"] as const,
-    icon: Armchair,
-    featured: true,
-  },
-];
 
 const featuredProjects = [
   {
@@ -166,39 +117,20 @@ const featuredProjects = [
 
 const whyChooseItems = [
   {
-    title: "Owner-led from start to finish",
-    detail: "You talk directly with Peter about the project, the site, and how the work will be built.",
-  },
-  {
-    title: "10+ years of wall and hardscape experience",
-    detail: "Real field experience in retaining walls, pavers, hardscape production, and residential construction.",
-  },
-  {
-    title: "Built for slope, drainage, and grade",
-    detail: "Projects are planned around the way South Sound properties actually behave over time.",
+    title: "Planned around slope and drainage",
+    detail: "The work starts with how the property actually behaves, not with a generic layout.",
   },
   {
     title: "Residential project focus",
-    detail: "The work is designed for how homeowners want to live in the yard, not just how it photographs.",
+    detail: "The build is shaped around how homeowners want to use the yard every day.",
+  },
+  {
+    title: "Practical build sequencing",
+    detail: "Walls, patios, grading, and planting are approached in the order that makes the finished space cleaner.",
   },
   {
     title: "Natural layout thinking",
     detail: "The landscape is shaped to feel grounded, practical, and connected to the property.",
-  },
-  {
-    title: "Clear local service area",
-    detail: "Serving Tacoma, Gig Harbor, Puyallup, Lakewood, University Place, Olympia, and nearby communities.",
-  },
-] as const;
-
-const reviewNotes = [
-  {
-    title: "Reviews are being added",
-    detail: "Homeowner feedback from completed projects will be added here as the site continues to grow.",
-  },
-  {
-    title: "Want references?",
-    detail: "Ask Peter about similar wall, patio, site-work, or productive landscape projects during your consultation.",
   },
 ] as const;
 
@@ -215,21 +147,6 @@ const aboutHighlights = [
     title: "Construction and development experience",
     detail: "Hands-on work in retaining walls, pavers, residential construction, and property development.",
   },
-] as const;
-
-const serviceAreaHighlights = [
-  "Tacoma",
-  "Gig Harbor",
-  "Puyallup",
-  "University Place",
-  "Lakewood",
-  "Olympia",
-] as const;
-
-const localProjectTypes = [
-  "Retaining walls",
-  "Patios and hardscaping",
-  "Permaculture / edible landscapes",
 ] as const;
 
 export default async function HomePage() {
@@ -266,17 +183,6 @@ export default async function HomePage() {
               </div>
             </div>
           </HeroImageCarousel>
-        </section>
-
-        <section className="home-credibility-section">
-          <div className="container credibility-row">
-            {trustItems.map((item) => (
-              <article key={item.title} className="credibility-item">
-                <strong>{item.title}</strong>
-                <span>{item.detail}</span>
-              </article>
-            ))}
-          </div>
         </section>
 
         <section className="section-shell" id="services">
@@ -325,55 +231,6 @@ export default async function HomePage() {
                   </Link>
                 </article>
               ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section-shell section-tinted" id="project-tiers">
-          <div className="container">
-            <div className="section-intro section-intro-wide">
-              <p className="eyebrow">Project Tiers</p>
-              <h2>Choose the level of project that fits your yard.</h2>
-              <p>
-                Start with a simpler refresh, solve a structural problem, or plan for a more complete outdoor living
-                build. Every tier still leads straight to an estimate with Peter.
-              </p>
-            </div>
-
-            <div className="project-tier-grid">
-              {projectTiers.map((tier) => {
-                const TierIcon = tier.icon;
-
-                return (
-                  <article
-                    key={tier.title}
-                    className={`project-tier-card${tier.featured ? " is-featured" : ""}`}
-                  >
-                    <div className="project-tier-head">
-                      <span className="project-tier-icon" aria-hidden="true">
-                        <TierIcon size={22} strokeWidth={2.1} />
-                      </span>
-                      <div className="project-tier-copy">
-                        <p className="mini-label">Project Tier</p>
-                        <h3>{tier.title}</h3>
-                      </div>
-                    </div>
-
-                    <p>{tier.description}</p>
-
-                    <ul className="project-tier-list">
-                      {tier.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-
-                    <Link href="/#contact" className="button button-secondary project-tier-cta">
-                      Get Estimate
-                      <ArrowRight size={16} />
-                    </Link>
-                  </article>
-                );
-              })}
             </div>
           </div>
         </section>
@@ -451,29 +308,17 @@ export default async function HomePage() {
             <div className="why-choose-copy">
               <div className="section-intro section-intro-tight">
                 <p className="eyebrow">Why Homeowners Choose PACH NW</p>
-                <h2>Owner-led work with real field experience and a calmer finished result.</h2>
+                <h2>Practical planning that keeps the finished yard calm and usable.</h2>
               </div>
               <p>
-                The focus is straightforward: solve the structural problem, build the outdoor space cleanly, and leave
-                the property with a more settled, usable landscape.
+                The work is meant to solve the site problem first, then leave the property feeling cleaner, easier to
+                use, and more settled when the project is done.
               </p>
             </div>
 
             <div className="why-choose-grid">
               {whyChooseItems.map((item) => (
                 <article key={item.title} className="why-choose-card">
-                  <strong>{item.title}</strong>
-                  <p>{item.detail}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          <div className="container review-note-shell">
-            <div className="review-note-grid">
-              {reviewNotes.map((item) => (
-                <article key={item.title} className="review-note-card">
-                  <p className="mini-label">Reviews</p>
                   <strong>{item.title}</strong>
                   <p>{item.detail}</p>
                 </article>
@@ -542,47 +387,6 @@ export default async function HomePage() {
                     <strong>{item.title}</strong>
                     <span>{item.detail}</span>
                   </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section-shell section-tinted" id="service-areas">
-          <div className="container areas-layout">
-            <div className="section-intro">
-              <p className="eyebrow">Service Area</p>
-              <h2>Serving the South Sound</h2>
-              <p>
-                PACH NW At Home Oasis works with homeowners across Tacoma, Puyallup, Gig Harbor, University Place,
-                Lakewood, Olympia, and surrounding South Sound communities.
-              </p>
-            </div>
-
-            <div className="areas-panel-simple">
-              <div className="areas-location">
-                <MapPin size={20} strokeWidth={2} />
-                <span>{siteConfig.locationLabel}</span>
-              </div>
-
-              <p className="areas-copy">
-                Common local projects include retaining walls for sloped properties, patios and hardscaping for daily
-                outdoor use, and practical edible landscape installs built for Pacific Northwest conditions.
-              </p>
-
-              <div className="area-chip-list" aria-label="South Sound service areas">
-                {serviceAreaHighlights.map((city) => (
-                  <span key={city} className="area-chip">
-                    {city}
-                  </span>
-                ))}
-              </div>
-
-              <div className="capability-strip" aria-label="South Sound project types">
-                {localProjectTypes.map((item) => (
-                  <span key={item} className="capability-chip">
-                    {item}
-                  </span>
                 ))}
               </div>
             </div>

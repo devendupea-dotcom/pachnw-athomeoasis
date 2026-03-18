@@ -15,13 +15,6 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
   const sequenceEyebrow = service.projectSequence?.some((image) => image.label === "During")
     ? "Before / During / After"
     : "Before / After";
-  const jumpLinks = [
-    service.gallery.length ? { href: "#service-photos", label: "Photos" } : null,
-    service.projectSequence?.length ? { href: "#service-project-flow", label: "Project Flow" } : null,
-    { href: "#service-includes", label: "Includes" },
-    { href: "#service-why", label: "Why It Helps" },
-    { href: "#service-approach", label: "Approach" },
-  ].filter(Boolean) as ReadonlyArray<{ href: string; label: string }>;
 
   return (
     <>
@@ -53,12 +46,6 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                 </Link>
               </div>
 
-              <div className="hero-actions">
-                <Link href="/#services" className="service-page-text-link">
-                  All Services
-                </Link>
-              </div>
-
               {service.relatedLinks?.length ? (
                 <div className="service-page-related-links">
                   {service.relatedLinks.map((link) => (
@@ -66,24 +53,6 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                       {link.label}
                       <ArrowRight size={16} />
                     </Link>
-                  ))}
-                </div>
-              ) : null}
-
-              <div className="service-page-local-card">
-                <p className="mini-label">South Sound Service</p>
-                <p>
-                  {service.title} for Tacoma, Gig Harbor, Puyallup, University Place, Lakewood, Olympia, and nearby
-                  South Sound communities.
-                </p>
-              </div>
-
-              {jumpLinks.length ? (
-                <div className="service-page-jump-links" aria-label={`${service.title} page sections`}>
-                  {jumpLinks.map((link) => (
-                    <a key={link.href} href={link.href} className="service-page-jump-link">
-                      {link.label}
-                    </a>
                   ))}
                 </div>
               ) : null}
