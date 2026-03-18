@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" fill="none">
+  <rect width="1200" height="820" rx="40" fill="#F5F3EA"/>
+  <rect x="70" y="86" width="1060" height="648" rx="32" fill="#DDD4C2"/>
+  <path d="M116 150h255l43 58-67 52H116l-24-52 24-58Z" fill="#8A5A2B"/>
+  <path d="M400 150h210l55 52-40 58H376l24-110Z" fill="#6F6355"/>
+  <path d="M664 150h184l52 52-36 58H640l24-110Z" fill="#B87333"/>
+  <path d="M902 150h182l24 58-24 52H860l42-110Z" fill="#8E775F"/>
+  <path d="M116 298h176l52 60-32 56H116l-38-54 38-62Z" fill="#6F6355"/>
+  <path d="M344 298h262l34 62-34 54H310l34-116Z" fill="#8A5A2B"/>
+  <path d="M658 298h204l34 62-34 54H624l34-116Z" fill="#A18769"/>
+  <path d="M914 298h170l24 62-24 54H880l34-116Z" fill="#B87333"/>
+  <path d="M116 452h224l30 60-46 54H116l-30-56 30-58Z" fill="#A18769"/>
+  <path d="M392 452h194l48 60-34 54H356l36-114Z" fill="#6F6355"/>
+  <path d="M638 452h256l28 60-44 54H604l34-114Z" fill="#8A5A2B"/>
+  <path d="M946 452h138l24 60-24 54H912l34-114Z" fill="#8E775F"/>
+  <path d="M116 606h268l34 60-48 32H116l-36-34 36-58Z" fill="#B87333"/>
+  <path d="M436 606h198l34 60-34 32H402l34-92Z" fill="#8A5A2B"/>
+  <path d="M686 606h184l40 60-26 32H652l34-92Z" fill="#6F6355"/>
+  <path d="M922 606h162l24 60-24 32H888l34-92Z" fill="#A18769"/>
+</svg>
+
